@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Triangulos_Metodos xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../apidocs/es/uclm/esi/labisoII/BC01/Triangulos_Metodos.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> es.uclm.esi.labisoII.BC01;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> java.math.*;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="Triangulos_Metodos" href="../../../../../es/uclm/esi/labisoII/BC01/Triangulos_Metodos.html#Triangulos_Metodos">Triangulos_Metodos</a> {
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> comprobarLado3(<a name="Triangulo" href="../../../../../es/uclm/esi/labisoII/BC01/Triangulo.html#Triangulo">Triangulo</a> triangulo) <strong class="jxr_keyword">throws</strong> <a name="formacionException" href="../../../../../es/uclm/esi/labisoII/BC01/formacionException.html#formacionException">formacionException</a>{
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   		<em class="jxr_comment">//boolean correcto = false;</em>
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   		<strong class="jxr_keyword">double</strong> l1 = triangulo.getLado1();
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  		<strong class="jxr_keyword">double</strong> l2 = triangulo.getLado2();
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  		<strong class="jxr_keyword">double</strong> a1 = Math.toRadians(triangulo.getAngulo1());
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  		<strong class="jxr_keyword">double</strong> operacion = (Math.pow(l1, 2)) + (Math.pow(l2, 2)) - 2 * (l1 * l2 * Math.cos(a1));
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  		<strong class="jxr_keyword">double</strong> teoremaCoseno = Math.round(Math.sqrt(operacion));
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  		System.out.println(<span class="jxr_string">"lado3"</span> + teoremaCoseno);
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  		<strong class="jxr_keyword">if</strong> (!(teoremaCoseno == triangulo.getLado3())) {
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a name="formacionException" href="../../../../../es/uclm/esi/labisoII/BC01/formacionException.html#formacionException">formacionException</a>(<span class="jxr_string">"La combinaci�n de lados y �ngulos no permiten formar un tri�ngulos"</span>);
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  		}
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  	}
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> comprobarAngulos(<a name="Triangulo" href="../../../../../es/uclm/esi/labisoII/BC01/Triangulo.html#Triangulo">Triangulo</a> triangulo) <strong class="jxr_keyword">throws</strong> <a name="formacionException" href="../../../../../es/uclm/esi/labisoII/BC01/formacionException.html#formacionException">formacionException</a> {
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  		<em class="jxr_comment">//boolean correcto = false;</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  		<strong class="jxr_keyword">double</strong> sumaAngulos = triangulo.getAngulo1() + triangulo.getAngulo2() + triangulo.getAngulo3();
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		<strong class="jxr_keyword">if</strong> (!(sumaAngulos == 180))
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a name="formacionException" href="../../../../../es/uclm/esi/labisoII/BC01/formacionException.html#formacionException">formacionException</a>(<span class="jxr_string">"La combinaci�n de lados y �ngulos no permiten formar un tri�ngulos"</span>);
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  	}
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> comprobarTipoLado(<a name="Triangulo" href="../../../../../es/uclm/esi/labisoII/BC01/Triangulo.html#Triangulo">Triangulo</a> triangulo) {
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		<strong class="jxr_keyword">double</strong> l1 = triangulo.getLado1();
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  		<strong class="jxr_keyword">double</strong> l2 = triangulo.getLado2();
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  		<strong class="jxr_keyword">double</strong> l3 = triangulo.getLado1();
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		<strong class="jxr_keyword">if</strong> ((l1 == l2) &amp;&amp; (l2 == l3)) {
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  			triangulo.setTipoLado(<span class="jxr_string">"Equilatero"</span>);
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  		} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> ((l1 == l2) || (l1 == l3) || (l2 == l3)) {
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  			triangulo.setTipoLado(<span class="jxr_string">"Isosceles"</span>);
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  		} <strong class="jxr_keyword">else</strong>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  			triangulo.setTipoLado(<span class="jxr_string">"Escaleno"</span>);
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  	}
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2022. All rights reserved.</div>
+</body>
+</html>

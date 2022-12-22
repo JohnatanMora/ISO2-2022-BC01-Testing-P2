@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,Triangulos_Metodos,55,74,11,3,11,12,8,3,2,2
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,Triangulo,0,169,2,24,0,60,2,33,0,22
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,anguloException,0,4,0,0,0,2,0,1,0,1
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,negativoException,0,4,0,0,0,2,0,1,0,1
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,formacionException,0,4,0,0,0,2,0,1,0,1
+Testing_Problema2_BC01,es.uclm.esi.labisoII.BC01,P3_Main,3,24,0,0,1,6,1,1,1,1

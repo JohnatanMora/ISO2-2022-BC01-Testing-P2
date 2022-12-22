@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>TrianguloTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../testapidocs/es/uclm/esi/labisoII/BC01/TrianguloTest.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> es.uclm.esi.labisoII.BC01;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="TrianguloTest" href="../../../../../es/uclm/esi/labisoII/BC01/TrianguloTest.html#TrianguloTest">TrianguloTest</a> {
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   	
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   	String noValido = <span class="jxr_string">"Triangulo no valido"</span>;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  	String equi_acutan = <span class="jxr_string">"Triangulo Equilatero y Acutangulo"</span>;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  	String iso_acutan = <span class="jxr_string">"Triangulo Isosceles y Acutangulo"</span>;
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  	String iso_rectan = <span class="jxr_string">"Triangulo Isosceles y Rectangulo"</span>;
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>  	String iso_obtusan = <span class="jxr_string">"Triangulo Isosceles y Obtusangulo"</span>;
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  	String escal_acutan = <span class="jxr_string">"Triangulo Escaleno y Acutangulo"</span>;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  	String escal_rectan = <span class="jxr_string">"Triangulo Escaleno y Rectangulo"</span>;
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  	String escal_obtusan = <span class="jxr_string">"Triangulo Escaleno y Obtusangulo"</span>;
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment">	 * Test method for {@link es.uclm.esi.iso2.ismael.Calculator#add(int, int)}.</em>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>  	@Test
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> comprobarTrianguloTestDecisiones() {
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(5,4,7,-2,80,90)));
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  		assertEquals(equi_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(3,3,3,60,60,60)));
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(5,4,7,200,80,90)));
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  		assertEquals(iso_obtusan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(9.83,6,6,35,35,110)));
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  		assertEquals(iso_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(4,9,9,77.16,77.16,25.68)));
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  		assertEquals(equi_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(4,4,4,60,60,60)));
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(4,9,4,35,25,120)));
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(8,4,3,60,60,60)));
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  		assertEquals(iso_rectan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(9.899,7,7,45,45,90)));
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  		assertEquals(equi_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(11,11,11,60,60,60)));
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  		assertEquals(iso_obtusan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(10.392,6,6,30,30,120)));
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  		assertEquals(escal_rectan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(6.32,3,7,90,25.38,64.62)));
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(4,3,8,45,55,80)));
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  		assertEquals(escal_obtusan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(5.38,3,7,110,23.75,46.25)));
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(1,7,2,20,40,112)));
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  	}
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment">	 * Test method for {@link es.uclm.esi.iso2.ismael.Calculator#subtract(int, int)}.</em>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  	@Test
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> comprobarTrianguloTestMC_DC() {
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>  		assertEquals(equi_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(3,3,3,60,60,60)));
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  		assertEquals(iso_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(11,9,11,65.85,48.30,65.85)));
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>  		assertEquals(iso_rectan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(5,5,7,90,45,45)));
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>  		assertEquals(iso_obtusan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(8.66,5,5,30,30,120)));
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>  		assertEquals(escal_acutan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(7.96,5.196,7,60,40,80)));
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>  		assertEquals(escal_rectan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(12.09,10.5,6,30,60,90)));
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>  		assertEquals(escal_obtusan, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(12.295,8.143,6,25,35,120)));
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>  		assertEquals(noValido, P3_Main.comprobarTriangulo(<strong class="jxr_keyword">new</strong> Triangulo(5,1,7,40,70,120)));
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  	}
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>  
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>  	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>  <em class="jxr_javadoccomment">	 * Test method for {@link es.uclm.esi.iso2.ismael.Calculator#subtract(int, int)}.</em>
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>  <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>  	
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>  	
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  	
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2022. All rights reserved.</div>
+</body>
+</html>
